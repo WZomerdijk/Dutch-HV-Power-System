@@ -32,8 +32,6 @@ The entire simulation can be ran by following these steps (provide an input for 
 *timeseries.run_timeseries(net, time_steps=[], continue_on_divergence=True)*
 
 ## References
-For information on and questions related to pandapower datastructures/functions/etc. you can check the support page of [pandapower](https://pandapower.readthedocs.io/en/v2.13.1)
-
-For information on the underlying work and the open data sources, you can check the corresponding [conference paper](https://ieeexplore.ieee.org/document/9960703)
-
-For extra information on the underlying work and examples of analyses support by these models, you can check the corresponding [MSc thesis](http://resolver.tudelft.nl/uuid:b9d69d1b-d2bf-4ce0-acc6-97171cde3568)
+For information on and questions related to pandapower datastructures/functions/etc. you can check the support page of [pandapower](https://pandapower.readthedocs.io/en/v2.13.1).  
+For information on the underlying work and the open data sources, you can check the corresponding [conference paper](https://ieeexplore.ieee.org/document/9960703).  
+For extra information on the underlying work and examples of analyses support by these models, you can check the corresponding [MSc thesis](http://resolver.tudelft.nl/uuid:b9d69d1b-d2bf-4ce0-acc6-97171cde3568).
