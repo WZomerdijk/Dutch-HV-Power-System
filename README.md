@@ -14,8 +14,12 @@ The models can be loaded by using the function: *pandapower.from_pickle(net, ...
 ### grid_2021.p
 110/150/220/380 kV Dutch Power System in 2021. Includes HV buses, HV lines, HV/MV transformers, and connections to other countries (as external grids in pandapower).
 
+<img src="https://github.com/WZomerdijk/Dutch-HV-Power-System/assets/122889461/aa727cb4-dda8-497a-9280-7ece9b2b6df7" width="500">
+
 ### aggregated_grid_2021.p
 220/380 kV Dutch Power System in 2021. Includes HV buses, HV lines, HV/MV transformers, and connections to other countries (as external grids in pandapower).
+
+<img src="https://github.com/WZomerdijk/Dutch-HV-Power-System/assets/122889461/84bc4cb4-692b-455f-9133-3fd849f18960" width="500">
 
 ### aggregated_grid_2021_with_generators_costs.p
 220/380 kV Dutch Power System in 2021. Includes HV buses, HV lines, HV/MV transformers, and connections to other countries (as external grids in pandapower). Moreover, all generators are mapped to their corresponding buses and the operating costs are provided per generator type (for OPF).
