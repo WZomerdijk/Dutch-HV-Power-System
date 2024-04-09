@@ -1,4 +1,4 @@
-# Open Data Based Model of the Dutch HV Power System in 2021 
+# Pandapower - Open Data Based Model of the Dutch HV Power System in 2021
 A numerical model of a power system can be used to get accurate insights into the impact of policies and investment decisions regarding the transformation of the energy system, while also helping in identifying bottlenecks in implementing decisions. This GitHub page presents a valid model of the Dutch high-voltage power system based on open data and open-source software. The representative model enables interdisciplinary research on policy-making and investment decisions specific to the Netherlands.
 
 ## Extra information
