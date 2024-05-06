@@ -9,7 +9,10 @@ The models are tested on python version 3.10.13, pandapower version 2.13.1, and 
 ## Description of models
 The models can run power flow and optimal power flow for a balanced AC power system.  
 Thus, three phase power flow is currently not possible.  
-The models can be loaded by using the function: *pandapower.from_pickle(net, ...)*
+The models can be loaded by using the function: 
+```
+pandapower.from_pickle(net, ...)
+```
 
 ### grid_2021.p
 110/150/220/380 kV Dutch Power System in 2021. Includes HV buses, HV lines, HV/MV transformers, and connections to other countries (as external grids in pandapower).
@@ -32,7 +35,9 @@ As this model is developed for analysis in 2018, generators that were not commis
 ### aggregated_grid_2018_with_generators_loads_costs_controllers.p
 All sustainable generators (solar and wind) and loads have controllers that provide them with an hourly generation/consumption setpoint. For running an optimal power flow, the operating costs per generator type per hour in 2018 are also provided by the controller. These prices are based on the fuel prices, generator efficiencies, and the ETS prices for carbon emmissions.  
 The entire simulation can be ran by following these steps (provide an input for *time_steps*):  
-*pandapower.timeseries.run_timeseries(net, time_steps=[], continue_on_divergence=True)*
+```
+pandapower.timeseries.run_timeseries(net, time_steps=[], continue_on_divergence=True)
+```
 
 ## References
 For information on and questions related to pandapower datastructures/functions/etc. you can check the support page of [pandapower](https://pandapower.readthedocs.io/en/v2.13.1).  
