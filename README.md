@@ -1,4 +1,4 @@
-# Pandapower - Open Data Based Model of the Dutch HV Power System in 2021
+# Pandapower - Open Data Based Model of the Dutch HV Power System
 
 ![Static Badge](https://img.shields.io/badge/MADE_WITH-PYTHON-orange?style=for-the-badge)
 
