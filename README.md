@@ -48,9 +48,9 @@ normalized_profile_PV = ... # add profile of normalized yearly solar production
 normalized_profile_WP = ... # add profile of normalized yearly wind production
 
 for i in range(len(net.sgen)):
-  if i in net.sgen.index.values[net.sgen['type'] == 'PV']: # add controller for only the solar elements
+  if net.sgen.type.loc[i] == 'PV': # add controller for only the solar elements
     pp.control.ConstControl(net, element='sgen', variable='max_p_mw', element_index=i, data_source=DFData(net.sgen.p_mw[i] * normalized_profile_PV))
-  if i in net.sgen.index.values[net.sgen['type'] == 'WP']: # add controller for only the wind elements
+  if net.sgen.type.loc[i] == 'WP': # add controller for only the wind elements
     pp.control.ConstControl(net, element='sgen', variable='max_p_mw', element_index=i, data_source=DFData(net.sgen.p_mw[i] * normalized_profile_WP))
 ```
 
@@ -86,16 +86,17 @@ ts = range(0, n_ts)
 pandapower.timeseries.run_timeseries(net, time_steps=[ts], continue_on_divergence=True)
 ```
 
-***Optional:*** Check timeseries data for any of the load, costs, or sustainable generator controllers:
+***Optional:***  
+Check timeseries data for any of the load, costs, or sustainable generator controllers:
 All sustainable generators (solar and wind) and loads have controllers that provide them with an hourly generation/consumption setpoint. For running an optimal power flow, the operating costs per generator type per hour in 2018 are also provided by the controller. 
-```bash
+```
 net.controller.object[...].data_source.to_dict()
 ```
 
 ## Attribution
 A paper describing the open data based model of the Dutch high-voltage power system was presented at IEEE ISGT Europe in 2022.  
 If you want to use the model, please consider referencing the conference paper.
-```
+```bash
 @inproceedings{DutchHVPowerSystem,
   author = {Zomerdijk, Wouter and Gusain, Digvijay and Palensky, Peter and Cvetkovic, Milos},
   title = {Open Data Based Model of the Dutch High-Voltage Power System}, 
