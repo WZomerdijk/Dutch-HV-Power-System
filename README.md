@@ -6,23 +6,24 @@
 [![pandapower](https://img.shields.io/badge/pandapower-2.13.1-blue.svg)](https://pypi.org/project/pandapower/2.13.1/)
 [![pandas](https://img.shields.io/badge/pandas-2.1.1-blue.svg)](https://pypi.org/project/pandas/2.1.1/)
 
-This repository presents valid models of the Dutch high-voltage power system based on open data and open-source software. The models can run power flow and optimal power flow for a balanced AC power system. They enable interdisciplinary research on policy-making and investment decisions specific to the Netherlands.  
+This repository presents valid models of the Dutch high-voltage power system based on open data and open-source software. The models can run power flow and optimal power flow for a balanced AC power system. 
 
 This work is published in a [conference paper](https://ieeexplore.ieee.org/document/9960703) titled: **"Open Data Based Model of the Dutch High-Voltage Power System"** by Wouter Zomerdijk, Digvijay Gusain, Peter Palensky, and Milos Cvetkovic.
 
-## Installation
+## Basic grid models
+The 
 
-***Step 1:*** Install the required packages  
+### Import and use
+***Step 1:*** Install the following packages:  
 
-***Step 2:*** Load one of the models:  
+[![pandapower](https://img.shields.io/badge/pandapower-2.13.1-blue.svg)](https://pypi.org/project/pandapower/2.13.1/)  
+[![pandas](https://img.shields.io/badge/pandas-2.1.1-blue.svg)](https://pypi.org/project/pandas/2.1.1/)
+
+***Step 2:*** Import one of the models:  
 ```bash
 net = pandapower.from_pickle('grid_2021.p')
 net = pandapower.from_pickle('aggregated_grid_2021.p')
-net = pandapower.from_pickle('aggregated_grid_2021_with_generators_costs.p')
-net = pandapower.from_pickle('aggregated_grid_2018_with_generators_loads_costs_controllers.p')
 ```
-
-## Models
 
 ### grid_2021.p
 110/150/220/380 kV Dutch Power System in 2021. Includes HV buses, HV lines, HV/MV transformers, and connections to other countries (as external grids in pandapower).
@@ -34,6 +35,7 @@ net = pandapower.from_pickle('aggregated_grid_2018_with_generators_loads_costs_c
 
 <img src="https://github.com/WZomerdijk/Dutch-HV-Power-System/assets/122889461/84bc4cb4-692b-455f-9133-3fd849f18960" width="250">
 
+## Simulation 
 ### aggregated_grid_2021_with_generators_costs.p
 220/380 kV Dutch Power System in 2021. Includes HV buses, HV lines, HV/MV transformers, and connections to other countries (as external grids in pandapower). Moreover, all generators are mapped to their corresponding buses and the operating costs are provided per generator type (for OPF).
 
@@ -46,6 +48,37 @@ As this model is developed for analysis in 2018, generators that were not commis
 
 The entire simulation can be ran by following these steps (provide an input for *time_steps*):  
 ```
+pandapower.timeseries.run_timeseries(net, time_steps=[...], continue_on_divergence=True)
+```
+
+
+
+### Import and use
+***Step 1:*** Install the following packages:  
+
+[![pandapower](https://img.shields.io/badge/pandapower-2.13.1-blue.svg)](https://pypi.org/project/pandapower/2.13.1/)  
+[![pandas](https://img.shields.io/badge/pandas-2.1.1-blue.svg)](https://pypi.org/project/pandas/2.1.1/)
+
+***Step 2:*** Import one of the models:  
+```bash
+net = pandapower.from_pickle('aggregated_grid_2021_with_generators_costs.p')
+net = pandapower.from_pickle('aggregated_grid_2018_with_generators_loads_costs_controllers.p')
+```
+
+***Step 3:*** Create output writer:  
+In order to save the results of a timeseries simulation, you have to specificy the variables to save, and the file type. For example:
+```bash
+from pandapower.timeseries.output_writer import OutputWriter
+
+ow = OutputWriter(net) # create an OutputWriter
+ow.log_variable('res_bus', 'vm_pu') # add logging for bus voltage magnitudes
+ow.log_variable('res_line', 'loading_percent') # add logging for line loadings in percent
+```
+
+***Step 4:*** Run a timeseries simulation:
+```bash
+pandapower.timeseries.run_time_series.run_timeseries(net, time_steps=None, continue_on_divergence=False, verbose=True, check_controllers=True, **kwargs)
+
 pandapower.timeseries.run_timeseries(net, time_steps=[...], continue_on_divergence=True)
 ```
 
