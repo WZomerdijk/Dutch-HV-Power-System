@@ -19,7 +19,7 @@ The _aggregated_grid_2021_with_generators_costs.p_ model comprises the same 220/
 
 <center>
 
-| <img src="https://github.com/WZomerdijk/Dutch-HV-Power-System/assets/122889461/aa727cb4-dda8-497a-9280-7ece9b2b6df7" height="300"> | <img src="https://github.com/WZomerdijk/Dutch-HV-Power-System/assets/122889461/84bc4cb4-692b-455f-9133-3fd849f18960" height="300"> | 
+| <img src="https://github.com/WZomerdijk/Dutch-HV-Power-System/assets/122889461/aa727cb4-dda8-497a-9280-7ece9b2b6df7" width="280" height="300"> | <img src="https://github.com/WZomerdijk/Dutch-HV-Power-System/assets/122889461/84bc4cb4-692b-455f-9133-3fd849f18960" width="255" height="300"> | 
 |:-:|:-:|
 |*Grid in 2021*|*Aggregated grid in 2021*|
 
