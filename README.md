@@ -1,6 +1,6 @@
-# Open Data Based Model of the Dutch High-Voltage Power System in Pandapower
+# Open Data Based Model of the Dutch High-Voltage Power System
 
-![Static Badge](https://img.shields.io/badge/MADE_WITH-PYTHON-orange?style=for-the-badge)
+![Static Badge](https://img.shields.io/badge/MADE_WITH-PYTHON_%26_PANDAPOWER-orange?style=for-the-badge)
 
 [![python](https://img.shields.io/badge/python-3.10.13-blue.svg)](https://www.python.org/)
 [![pandapower](https://img.shields.io/badge/pandapower-2.13.1-blue.svg)](https://pypi.org/project/pandapower/2.13.1/)
