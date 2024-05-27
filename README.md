@@ -6,7 +6,7 @@
 [![pandapower](https://img.shields.io/badge/pandapower-2.13.1-blue.svg)](https://pypi.org/project/pandapower/2.13.1/)
 [![pandas](https://img.shields.io/badge/pandas-2.1.1-blue.svg)](https://pypi.org/project/pandas/2.1.1/)
 
-This repository presents valid models of the Dutch high-voltage power system based on open data and open-source software. The models can run power flow and optimal power flow for a balanced AC power system. 
+This repository presents valid models of the Dutch high-voltage power system based on open data and open-source software. The models can run power flow and optimal power flow for a DC and balanced AC power system. 
 
 This work is published in a [conference paper](https://ieeexplore.ieee.org/document/9960703) titled: **"Open Data Based Model of the Dutch High-Voltage Power System"** by Wouter Zomerdijk, Digvijay Gusain, Peter Palensky, and Milos Cvetkovic.
 
@@ -80,7 +80,7 @@ ow.log_variable('res_line', 'loading_percent') # add logging for line loadings i
 ```python
 n_ts = 8760 # number of hours in one year
 ts = range(0, n_ts)
-pandapower.timeseries.run_timeseries(net, time_steps=[ts], continue_on_divergence=True)
+pandapower.timeseries.run_timeseries(net, time_steps=[ts], continue_on_divergence=True, run = pp.rundcopp)
 ```
 
 ***Optional:***  
