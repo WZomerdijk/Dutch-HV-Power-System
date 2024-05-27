@@ -29,6 +29,8 @@ pip install pandapower==2.13.1 pandas==2.1.1
 
 ***Step 2:*** Import one of the models:  
 ```python
+import pandapower
+
 net = pandapower.from_pickle('grid_2021.p')
 # or
 net = pandapower.from_pickle('aggregated_grid_2021.p')
@@ -63,6 +65,8 @@ pip install pandapower==2.13.1 pandas==2.1.1
 
 ***Step 2:*** Import the model:  
 ```python
+import pandapower
+
 net = pandapower.from_pickle('aggregated_grid_2018_with_generators_loads_costs_controllers.p')
 ```
 
