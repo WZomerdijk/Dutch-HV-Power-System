@@ -11,8 +11,8 @@ This repository presents valid models of the Dutch high-voltage power system bas
 This work is published in a [conference paper](https://ieeexplore.ieee.org/document/9960703) titled: **"Open Data Based Model of the Dutch High-Voltage Power System"** by Wouter Zomerdijk, Digvijay Gusain, Peter Palensky, and Milos Cvetkovic.
 
 ## Description of basic grid models
-* **_grid_2021.p:_** Includes all 110/150/220/380 kV components of the Dutch power system in 2021. It includes HV buses, HV lines, HV/MV transformers, and connections to other countries (as external grids in pandapower).
-* **_aggregated_grid_2021.p:_** Includes all components of the 220/380 kV part of the Dutch power system in 2021. It includes HV buses, HV lines, HV/MV transformers, and connections to other countries (as external grids in pandapower).
+* **_grid_2021.p:_** Includes all 110/150/220/380 kV components of the Dutch power system in 2021. It includes HV buses, HV lines, HV/MV transformers, and connections to other countries.
+* **_aggregated_grid_2021.p:_** Includes all components of the 220/380 kV part of the Dutch power system in 2021. It includes HV buses, HV lines, HV/MV transformers, and connections to other countries.
 * **_aggregated_grid_2021_with_generators_costs.p:_** Includes the same 220/380 kV components as the _aggregated_grid_2021.p_ model. It further includes all generators, which are mapped to their corresponding connecting buses, and the average operating costs per generator type (for OPF). These costs are based on the fuel prices, generator efficiencies, and the ETS prices for carbon emmissions in 2021.
 
 <div align="center">
@@ -54,7 +54,7 @@ for i in range(len(net.sgen)):
 ```
 
 ## Description of validation model
-- **_aggregated_grid_2018_with_generators_loads_costs_controllers.p:_** Includes the 220/380 kV components of the Dutch power system in 2018. It includes HV buses, HV lines, HV/MV transformers, and connections to other countries (as external grids in pandapower). All generators are mapped to their corresponding buses and the operating costs are provided per generator type (for DC OPF). These costs are based on the fuel prices, generator efficiencies, and the ETS prices for carbon emmissions in 2018. Furthermore, the aggregated loads are mapped to corresponding buses and controllers are implemented to run an hourly analysis on the entire Dutch power system for 2018. As this model is developed for analysis in 2018, generators that were not commissioned before 2018 were excluded.
+- **_aggregated_grid_2018_with_generators_loads_costs_controllers.p:_** Includes the 220/380 kV components of the Dutch power system in 2018. It includes HV buses, HV lines, HV/MV transformers, and connections to other countries. All generators are mapped to their corresponding buses and the operating costs are provided per generator type (for DC OPF). These costs are based on the fuel prices, generator efficiencies, and the ETS prices for carbon emmissions in 2018. Furthermore, the aggregated loads are mapped to corresponding buses and controllers are implemented to run an hourly analysis on the entire Dutch power system for 2018. As this model is developed for analysis in 2018, generators that were not commissioned before 2018 were excluded.
 
 ### Installation
 
@@ -82,9 +82,10 @@ ow.log_variable('res_line', 'loading_percent') # add logging for line loadings i
 
 ***Step 4:*** Run a timeseries simulation:
 ```python
-n_ts = 8760 # number of hours in one year
-ts = range(0, n_ts)
-pandapower.timeseries.run_timeseries(net, time_steps=[ts], continue_on_divergence=True, run = pp.rundcopp)
+# for DC OPF
+pandapower.timeseries.run_timeseries(net, continue_on_divergence=True, run = pp.rundcopp)
+# or for AC OPF
+pandapower.timeseries.run_timeseries(net, continue_on_divergence=True, run = pp.runopp)
 ```
 
 ***Optional:***  
