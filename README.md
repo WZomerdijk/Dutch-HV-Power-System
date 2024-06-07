@@ -54,7 +54,7 @@ for i in range(len(net.sgen)):
 ```
 
 ## Description of validation model
-- **_aggregated_grid_2018_with_generators_loads_costs_controllers.p:_** Includes the 220/380 kV components of the Dutch power system in 2018. It includes HV buses, HV lines, HV/MV transformers, and connections to other countries. All generators are mapped to their corresponding buses and the operating costs are provided per generator type (for DC OPF). These costs are based on the fuel prices, generator efficiencies, and the ETS prices for carbon emmissions in 2018. Furthermore, the aggregated loads are mapped to corresponding buses and controllers are implemented to run an hourly analysis on the entire Dutch power system for 2018. As this model is developed for analysis in 2018, generators that were not commissioned before 2018 were excluded.
+- **_aggregated_grid_2018_with_generators_loads_costs_controllers.p:_** Includes the 220/380 kV components of the Dutch power system in 2018. It includes HV buses, HV lines, HV/MV transformers, and connections to other countries. All generators are mapped to their corresponding buses and the operating costs are provided per generator type. These costs are based on the fuel prices, generator efficiencies, and the ETS prices for carbon emmissions in 2018. Furthermore, the aggregated loads are mapped to corresponding buses and controllers are implemented to run an hourly analysis on the entire Dutch power system for 2018. As this model is developed for analysis in 2018, generators that were not commissioned before 2018 were excluded.
 
 ### Installation
 
